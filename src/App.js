@@ -1,15 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import styled from "styled-components";
+
+import GlobalStyle from "./Global";
+import { Heading, Button, CancelButton } from "./elements";
+
+const AppWrapper = styled.div`
+  header {
+    background: teal;
+  }
+`;
+
+const Fake = ({ className }) => (
+  <div className={className}>
+    <h3>FakeComponent here</h3>
+  </div>
+);
+const DoubleFake = styled(Fake)`
+  h3 {
+    color: purple;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
+    <AppWrapper>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <Heading>
           Edit <code>src/App.js</code> and save to reload.
-        </p>
+        </Heading>
+        <Fake />
+        <DoubleFake />
+        <CancelButton top="200" type="cancel">
+          Cancel
+        </CancelButton>
+        <Button type="save">Save</Button>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -19,7 +45,8 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+      <GlobalStyle />
+    </AppWrapper>
   );
 }
 
