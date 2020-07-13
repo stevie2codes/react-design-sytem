@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../logo.svg";
-import { Colors, Social, Elevation } from "../utilities";
+import { Colors, Social, Elevation, fixed, serif } from "../utilities";
 
 const Header = ({ className }) => {
   return (
@@ -23,14 +23,17 @@ const StyledHeader = styled(Header)`
   justify-content: space-between;
   height: 3rem;
   align-items: center;
+  ${fixed()};
+  width: 100%;
   ${Elevation[2]};
   .logo {
     width: 60px;
   }
   .nav a {
-    color: white;
+    color: ${Social.twitter};
     margin: 10px;
     text-decoration: none;
+    ${serif};
   }
 `;
 
