@@ -20,6 +20,12 @@ body {
 
 }
 
+main{
+    width: 90%;
+  background:black;
+    margin: 0 auto;
+}
+
 `;
 
 export default GlobalStyle;

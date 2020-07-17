@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import { ThemeProvider } from "styled-components";
 import Header from "./layouts/Header";
 import GlobalStyle from "./Global";
+import MenuIcon from "./elements/MenuIcon";
+import { Nav } from "./components/Nav";
 
-import { Button } from "./elements/Buttons";
+const theme = {
+  colors: {
+    primary: "#E54B4B",
+    secondary: "#DBDE61"
+  }
+};
+
 function App() {
+  const [isNav, setIsNav] = useState(false);
   return (
-    <div>
-      <Header />
-      <Button>Hello</Button>
-      <Button type="cancel"> Cancel me</Button>
-      <GlobalStyle />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Header />
+        <MenuIcon onClick={() => setIsNav(true)} />
+        <Nav isNav={isNav} setIsNav={setIsNav} />
+        <GlobalStyle />
+        <main></main>
+      </div>
+    </ThemeProvider>
   );
 }
 

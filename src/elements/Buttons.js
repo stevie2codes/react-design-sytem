@@ -1,33 +1,35 @@
 import styled from "styled-components";
-import { lighten } from "polished";
+import { applyStyleModifiers } from "styled-components-modifiers";
 import { Colors, Elevation } from "../utilities";
+import { motion } from "framer-motion";
 
-export const Button = styled.button`
-  background-color: transparent;
+const BUTTON_MODIFIERS = {
+  small: () => `
+    font-size: 0.8rem;
+    padding: 3px 10px;
+  `,
+  cancel: ({ theme }) => `
+  background: ${theme.colors.primary}
+  `
+};
+
+export const Button = styled(motion.button)`
   padding: 5px 15px;
-  border-radius: 6px;
-  ${Elevation[1]};
+  background-color: white;
   border: 1px solid ${Colors.purple};
-  color: ${Colors.black};
-  font-size: 2rem;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   margin: 10px;
-  transition: 0.3s ease;
+  font-size: 1rem;
+  transition: 0.3s all ease-in-out;
+
   &:hover {
     ${Elevation[2]};
-    background-color: ${Colors.purple};
-    color: white;
-    transform: scale(1.02);
+    background: ${Colors.purple};
+    color: ${Colors.white};
   }
 
-  ${({ type }) => {
-    if (type === "cancel") {
-      return `
-      background-color: tomato;
-      &:hover{
-        background: ${lighten(0.2, "tomato")};
-      `;
-    }
-  }}
+  ${applyStyleModifiers(BUTTON_MODIFIERS)};
 `;
 
 // export const CancelButton = styled(Button)`
