@@ -18,7 +18,7 @@ const ParticlesElement = () => {
             events: {
               onhover: {
                 enable: true,
-                mode: "repulse"
+                mode: "grab"
               }
             }
           }
