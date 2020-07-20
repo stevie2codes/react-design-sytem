@@ -17,12 +17,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  background:${props => props.theme.colors.primary};
 }
 
 main{
     width: 90%;
-  background:black;
+
     margin: 0 auto;
 }
 

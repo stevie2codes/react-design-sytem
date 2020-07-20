@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
+import CloseIcon from "./CloseIcon";
 
 const Modal = ({ isToggle, setIsToggle, children }) => {
   return (
@@ -16,7 +17,9 @@ const Modal = ({ isToggle, setIsToggle, children }) => {
             animate={{ y: 0 }}
             exit={{ x: 250 }}
           >
-            <CloseButton onClick={() => setIsToggle(false)}>Close</CloseButton>
+            <CloseIcon onClick={() => setIsToggle(false)} strokeColor={"#000"}>
+              Close
+            </CloseIcon>
             {children}
           </motion.div>
         </ModalDiv>
@@ -25,16 +28,12 @@ const Modal = ({ isToggle, setIsToggle, children }) => {
   );
 };
 
-const CloseButton = styled(motion.button)`
-  border: none;
-  background: tomato;
-  color: white;
-`;
-
 const ModalDiv = styled(motion.div)`
+  width: 50vw;
+  margin: auto;
   position: fixed;
   top: 200px;
   left: 50%;
-  transform: translate3d(-50%, 50%);
+  transform: translate(-50%);
 `;
 export default Modal;

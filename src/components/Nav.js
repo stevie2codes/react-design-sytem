@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Colors } from "../utilities/Colors";
 import { Elevation } from "../utilities";
 import { motion } from "framer-motion";
-import { PrimaryFont } from "../utilities";
+import { PrimaryFont, fixed } from "../utilities";
 import CloseIcon from "../elements/CloseIcon";
 
 import Home from "../pages/Home";
@@ -21,7 +21,7 @@ export const Nav = ({ isNav, setIsNav }) => {
           transition={{ damping: 300 }}
         >
           <ParticlesElement />
-          <CloseIcon onClick={() => setIsNav(false)} />
+          <CloseIcon onClick={() => setIsNav(false)} strokeColor={"#fff"} />
           <motion.ul variants={ulVariants}>
             <motion.li variants={liVariants}>
               <Link to="/" onClick={() => setIsNav(false)}>
@@ -52,9 +52,7 @@ export const Nav = ({ isNav, setIsNav }) => {
 };
 
 const MenuNav = styled(motion.nav)`
-  position: fixed;
-  top: 0;
-  right: 0;
+  ${fixed({ x: 0, y: 0 })};
   width: 300px;
   height: 100vh;
   background-color: ${Colors.purple};

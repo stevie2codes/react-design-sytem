@@ -14,11 +14,12 @@ const BUTTON_MODIFIERS = {
 };
 
 export const Button = styled(motion.button)`
-  padding: 5px 15px;
-  background-color: white;
-  border: 1px solid ${Colors.purple};
-  border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  padding: 10px 25px;
+  background-image: linear-gradient(to top, #d8d9db 0%, #fff 80%, #fdfdfd 100%);
+  border: 1px solid #8f9092;
+  border-radius: 30px;
+  box-shadow: 0 4px 3px 1px #fcfcfc, 0 6px 8px #d6d7d9, 0 -4px 4px #cecfd1,
+    0 -6px 4px #fefefe, inset 0 0 3px 0 #cecfd1;
   margin: 10px;
   font-size: 1rem;
   transition: 0.3s all ease-in-out;

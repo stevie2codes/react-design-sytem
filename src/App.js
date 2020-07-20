@@ -5,23 +5,37 @@ import GlobalStyle from "./Global";
 import MenuIcon from "./elements/MenuIcon";
 import { Nav } from "./components/Nav";
 
+import Switch from "./elements/Switch";
+import { Colors, Elevation } from "./utilities";
+
 const theme = {
   colors: {
-    primary: "#E54B4B",
-    secondary: "#DBDE61"
+    primary: `${Colors.white}`,
+    secondary: "#DBDE61",
+    shadow: `${Elevation[3]}`
+  }
+};
+const theme2 = {
+  colors: {
+    primary: "#212121",
+    secondary: "#DBDE61",
+    shadow: `${Elevation[1]}`
   }
 };
 
 function App() {
   const [isNav, setIsNav] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={isDarkMode ? theme : theme2}>
       <div>
         <Header />
         <MenuIcon onClick={() => setIsNav(true)} />
         <Nav isNav={isNav} setIsNav={setIsNav} />
         <GlobalStyle />
-        <main></main>
+        <main>
+          <Switch isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+        </main>
       </div>
     </ThemeProvider>
   );

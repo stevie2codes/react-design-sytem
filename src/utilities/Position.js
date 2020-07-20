@@ -7,7 +7,7 @@ export const fixed = ({ x = 0, y = 0 } = {}) =>
   css`
     position: fixed;
     top: ${y};
-    left: ${x};
+    right: ${x};
   `;
 export const absolute = ({ x = 0, y = 0 } = {}) =>
   css`
