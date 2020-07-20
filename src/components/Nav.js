@@ -78,8 +78,23 @@ const MenuNav = styled(motion.nav)`
     text-decoration: none;
     border-bottom: 2px solid transparent;
     transition: 0.2s ease-in-out border;
-    &:hover {
-      border-bottom: 1px solid ${Colors.white};
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 10px;
+      background-color: ${Colors.white};
+      position: absolute;
+      bottom: -10px;
+      opacity: 0;
+      transition: 0.3s linear all;
+    }
+    &:hover:before {
+      right: 50%;
+      width: 10px;
+      border-radius: 50%;
+      opacity: 1;
     }
   }
 `;

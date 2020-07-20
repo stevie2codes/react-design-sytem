@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "polished";
 
+import { Colors } from "./utilities/Colors";
+
 const GlobalStyle = createGlobalStyle`
 ${normalize()};
 html{
@@ -22,8 +24,15 @@ body {
 
 main{
     width: 90%;
+    margin: 50px auto;
+}
 
-    margin: 0 auto;
+span{
+  color:${Colors.darkGrey};
+  line-height:1.65;
+  &:hover{
+    color:${Colors.white};
+      }
 }
 
 `;

@@ -8,10 +8,14 @@ const Home = () => {
   return (
     <div>
       <h1>HOME</h1>
-      <Button onClick={() => setIsToggle(true)}>Show Modal</Button>
-      <Modal isToggle={isToggle} setIsToggle={setIsToggle}>
-        <Cards title="SignIn" graphic={signin} />
-      </Modal>
+      <main>
+        <Button onClick={() => setIsToggle(true)}>
+          <span>Show Modal</span>
+        </Button>
+        <Modal isToggle={isToggle} setIsToggle={setIsToggle}>
+          <Cards title="SignIn" graphic={signin} />
+        </Modal>
+      </main>
     </div>
   );
 };

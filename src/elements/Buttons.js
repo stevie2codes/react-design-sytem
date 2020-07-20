@@ -14,20 +14,74 @@ const BUTTON_MODIFIERS = {
 };
 
 export const Button = styled(motion.button)`
-  padding: 10px 25px;
-  background-image: linear-gradient(to top, #d8d9db 0%, #fff 80%, #fdfdfd 100%);
-  border: 1px solid #8f9092;
-  border-radius: 30px;
-  box-shadow: 0 4px 3px 1px #fcfcfc, 0 6px 8px #d6d7d9, 0 -4px 4px #cecfd1,
-    0 -6px 4px #fefefe, inset 0 0 3px 0 #cecfd1;
-  margin: 10px;
-  font-size: 1rem;
-  transition: 0.3s all ease-in-out;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 17.625rem;
+  height: 3rem;
+  margin-top: 3rem;
+  border: none;
+  max-width: none;
+  position: relative;
+  background: transparent;
+  text-align: center;
+  text-decoration: none;
+  overflow: visible;
+  color: #4c4c4c;
+  z-index: 1;
+  max-width: 100%;
 
-  &:hover {
+  &::before {
+    content: "";
+    top: 0;
+    position: absolute;
+    width: 17.625rem;
+    height: 1.5rem;
+    max-width: 100%;
+    z-index: -1;
+    left: 0;
+    border: 1px solid #430099;
+    background: #fff;
+    transform: translateZ(0);
+    border-bottom: none;
+    transition: background 0.2s ease;
+    transform: perspective(0.4375rem) rotateX(0.5deg);
+  }
+
+  &::after {
+    content: "";
+    top: 1.5rem;
+    position: absolute;
+    width: 17.625rem;
+    height: 1.5rem;
+    max-width: 100%;
+    z-index: -1;
+    left: 0;
+    border: 1px solid #430099;
+    background: #fff;
+    border-top: none;
+    transform: translateZ(0);
+    transition: background 0.2s ease;
+    transform: perspective(0.4375rem) rotateX(-0.5deg);
+  }
+
+  &:hover:before {
     ${Elevation[2]};
+    border: none;
     background: ${Colors.purple};
     color: ${Colors.white};
+    transition: 0.2s ease-in all;
+  }
+  &:hover:after {
+    ${Elevation[2]};
+    border: none;
+    background: ${Colors.purple};
+    color: ${Colors.white};
+    transition: 0.2s ease-in all;
+  }
+  &:focus {
+    outline: none;
+    ${Elevation[0]}
   }
 
   ${applyStyleModifiers(BUTTON_MODIFIERS)};

@@ -28,7 +28,7 @@ const ModeSwitch = styled(motion.div)`
   border: 1px solid #8f9092;
   border-radius: 25px;
   display: flex;
-  ${fixed({ x: "10px", y: "100px" })}
+  ${fixed({ x: "10px", y: "100px" })};
   align-items: center;
   padding: 25px 3px;
 `;

@@ -5,9 +5,9 @@ const About = ({ title, graphic }) => {
   return (
     <div>
       <h1>ABOUT</h1>
-      <div className="main">
+      <main>
         <Cards title="Sign Up" graphic={signup} />
-      </div>
+      </main>
     </div>
   );
 };

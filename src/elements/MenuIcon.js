@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Colors } from "../utilities/Colors";
 import styled from "styled-components";
 const MenuIcon = ({ onClick }) => {
   return (
@@ -11,9 +11,9 @@ const MenuIcon = ({ onClick }) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <line y1="1" x2="30" y2="1" stroke="white" strokeWidth="2" />
-        <line y1="10" x2="30" y2="10" stroke="white" strokeWidth="2" />
-        <line y1="20" x2="30" y2="20" stroke="white" strokeWidth="2" />
+        <line y1="1" x2="30" y2="1" stroke={Colors.white} strokeWidth="2" />
+        <line y1="10" x2="30" y2="10" stroke={Colors.white} strokeWidth="2" />
+        <line y1="20" x2="30" y2="20" stroke={Colors.white} strokeWidth="2" />
       </svg>
     </BurgerMenu>
   );

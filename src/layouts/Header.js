@@ -13,7 +13,7 @@ const Header = ({ className, theme }) => {
 
 const StyledHeader = styled(Header)`
   background-color: ${Colors.purple};
-  padding: 10px 5%;
+  padding: 20px 5%;
   display: flex;
   justify-content: space-between;
   height: auto;
