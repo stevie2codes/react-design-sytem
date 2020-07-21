@@ -7,8 +7,8 @@ import React from "react";
 
 const Cards = ({ title, graphic }) => {
   return (
-    <div>
-      <CardContainer>
+    <CardContainer>
+      <SignupCard>
         <CardTitle className="cardTitle">{title}</CardTitle>
         <CardGraphic src={graphic} alt="Card Graphic" />
         <Input type="text" name="" id="userNameInput" placeholder="Username" />
@@ -18,23 +18,36 @@ const Cards = ({ title, graphic }) => {
           id="passwordInput"
           placeholder="password"
         />
-        <Button>Sign Up</Button>
-      </CardContainer>
-    </div>
+        <CardButton>Sign Up</CardButton>
+      </SignupCard>
+    </CardContainer>
   );
 };
 
-export const CardContainer = styled.div`
+const CardContainer = styled.div`
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 20px;
+`;
+
+export const SignupCard = styled.div`
   border-radius: 6px;
   ${Elevation[2]};
-  padding: 10px;
-  width: 80vmax;
-  width: 100%;
+  padding: 20px;
+  width: 380px;
+  max-width: 100%;
   height: 60vh;
   margin: auto;
   position: relative;
+  z-index: -1;
 `;
-
+const CardButton = styled(Button)`
+  position: absolute;
+  bottom: 60px;
+  right: 50%;
+  transform: translate(50%);
+`;
 const CardTitle = styled.h2`
   ${PrimaryFont}
   color:${Colors.purple}
@@ -43,10 +56,10 @@ const CardTitle = styled.h2`
 
 const CardGraphic = styled.img`
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 50%;
-  height: 50%;
+  bottom: 10%;
+  right: 10%;
+  width: 80%;
+  height: 80%;
 `;
 
 const Input = styled.input`

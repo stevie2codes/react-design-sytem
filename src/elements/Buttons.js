@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { applyStyleModifiers } from "styled-components-modifiers";
-import { Colors, Elevation } from "../utilities";
+import { Colors, Elevation, PrimaryFont } from "../utilities";
 import { motion } from "framer-motion";
 
 const BUTTON_MODIFIERS = {
@@ -20,6 +20,8 @@ export const Button = styled(motion.button)`
   width: 17.625rem;
   height: 3rem;
   margin-top: 3rem;
+  font-family: ${PrimaryFont};
+
   border: none;
   max-width: none;
   position: relative;
@@ -40,7 +42,7 @@ export const Button = styled(motion.button)`
     max-width: 100%;
     z-index: -1;
     left: 0;
-    border: 1px solid #430099;
+    border: 1.5px solid #430099;
     background: #fff;
     transform: translateZ(0);
     border-bottom: none;
@@ -57,7 +59,7 @@ export const Button = styled(motion.button)`
     max-width: 100%;
     z-index: -1;
     left: 0;
-    border: 1px solid #430099;
+    border: 1.5px solid #430099;
     background: #fff;
     border-top: none;
     transform: translateZ(0);

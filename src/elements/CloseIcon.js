@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 import styled from "styled-components";
 import { fixed } from "../utilities/Position";
@@ -37,9 +36,9 @@ const CloseIcon = ({ onClick, strokeColor }) => {
     </Close>
   );
 };
-export default CloseIcon;
 
-const Close = styled(motion.svg)`
-  ${fixed({ x: "5px", y: "5px" })}
-  z-index:5;
+const Close = styled.svg`
+  ${fixed({ x: "5px", y: "20px" })}
 `;
+
+export default CloseIcon;

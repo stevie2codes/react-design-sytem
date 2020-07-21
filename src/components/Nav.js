@@ -3,7 +3,7 @@ import { Link, BrowserRouter, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import { Colors } from "../utilities/Colors";
 import { Elevation } from "../utilities";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { PrimaryFont, fixed } from "../utilities";
 import CloseIcon from "../elements/CloseIcon";
 
@@ -14,39 +14,42 @@ import ParticlesElement from "../elements/Particles";
 export const Nav = ({ isNav, setIsNav }) => {
   return (
     <>
-      <BrowserRouter>
-        <MenuNav
-          variants={variants}
-          animate={isNav ? "open" : "closed"}
-          transition={{ damping: 300 }}
-        >
-          <ParticlesElement />
-          <CloseIcon onClick={() => setIsNav(false)} strokeColor={"#fff"} />
-          <motion.ul variants={ulVariants}>
-            <motion.li variants={liVariants}>
-              <Link to="/" onClick={() => setIsNav(false)}>
-                Home{" "}
-              </Link>
-            </motion.li>
-            <motion.li variants={liVariants}>
-              <Link to="/about" onClick={() => setIsNav(false)}>
-                About
-              </Link>
-            </motion.li>
-            <motion.li variants={liVariants}>
-              <Link to="/portfolio">Portfolio</Link>
-            </motion.li>
-            <motion.li variants={liVariants}>
-              <Link to="/contact">Contact</Link>
-            </motion.li>
-          </motion.ul>
-        </MenuNav>
+      <AnimatePresence>
+        <BrowserRouter>
+          <MenuNav
+            variants={variants}
+            initial="closed"
+            animate={isNav ? "open" : "closed"}
+            transition={{ damping: 300 }}
+          >
+            <ParticlesElement />
+            <CloseIcon onClick={() => setIsNav(false)} strokeColor={"#fff"} />
+            <motion.ul variants={ulVariants}>
+              <motion.li variants={liVariants}>
+                <Link to="/" onClick={() => setIsNav(false)}>
+                  Home{" "}
+                </Link>
+              </motion.li>
+              <motion.li variants={liVariants}>
+                <Link to="/about" onClick={() => setIsNav(false)}>
+                  About
+                </Link>
+              </motion.li>
+              <motion.li variants={liVariants}>
+                <Link to="/portfolio">Portfolio</Link>
+              </motion.li>
+              <motion.li variants={liVariants}>
+                <Link to="/contact">Contact</Link>
+              </motion.li>
+            </motion.ul>
+          </MenuNav>
 
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-        </Switch>
-      </BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+          </Switch>
+        </BrowserRouter>
+      </AnimatePresence>
     </>
   );
 };
@@ -56,7 +59,7 @@ const MenuNav = styled(motion.nav)`
   width: 300px;
   height: 100vh;
   background-color: ${Colors.purple};
-  padding: 20px;
+  padding: 0px 50px;
   z-index: 10;
   ${Elevation[2]};
   ul {

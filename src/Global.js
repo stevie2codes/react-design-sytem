@@ -13,7 +13,7 @@ html{
 }
 body {
   margin: 0;
-  padding:65px 0 0 ;
+  padding:85px 0 0 ;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -29,7 +29,10 @@ main{
 
 span{
   color:${Colors.darkGrey};
-  line-height:1.65;
+  width:100%;
+  height:50%;
+  position:absolute;
+  font-size:1.2rem;
   &:hover{
     color:${Colors.white};
       }

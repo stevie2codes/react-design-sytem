@@ -22,7 +22,7 @@ const MenuIcon = ({ onClick }) => {
 export default MenuIcon;
 
 const BurgerMenu = styled.div`
-  position: absolute;
-  top: 20px;
+  position: fixed;
+  top: 40px;
   right: 10px;
 `;
