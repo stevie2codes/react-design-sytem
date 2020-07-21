@@ -11,16 +11,12 @@ const About = ({ title, graphic }) => {
       <h1>Cards</h1>
       <main>
         <Cards title="SignUp" graphic={signin} buttonText={"Sign Up"}>
-          <Cards.Button>
-            <span>SignUp</span>
-          </Cards.Button>
+          <Cards.Button>SignUp</Cards.Button>
         </Cards>
         <Cards title="Sign In" graphic={signup} buttonText={"Sign In"}>
           <TextInput type={"text"} placeholder={"Sign In"} />
           <TextInput type={"password"} placeholder={"Password"} />
-          <Cards.Button>
-            <span>Sign In</span>
-          </Cards.Button>
+          <Cards.Button modifiers="small">Sign In</Cards.Button>
         </Cards>
       </main>
     </div>

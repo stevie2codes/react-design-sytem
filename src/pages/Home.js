@@ -9,14 +9,10 @@ const Home = () => {
     <div>
       <h1>HOME</h1>
       <main>
-        <Button onClick={() => setIsToggle(true)}>
-          <span>Show Modal</span>
-        </Button>
+        <Button onClick={() => setIsToggle(true)}>ShowMOdal</Button>
         <Modal isToggle={isToggle} setIsToggle={setIsToggle}>
           <Cards title="SignIn" graphic={signin}>
-            <Cards.Button>
-              <span>Sign in</span>
-            </Cards.Button>
+            <Cards.Button>SignIn</Cards.Button>
           </Cards>
         </Modal>
       </main>

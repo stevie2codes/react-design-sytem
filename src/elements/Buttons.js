@@ -5,14 +5,16 @@ import { Colors, Elevation, PrimaryFont } from "../utilities";
 const BUTTON_MODIFIERS = {
   small: () => `
     font-size: 0.8rem;
-    padding: 3px 10px;
-  `,
-  cancel: ({ theme }) => `
-  background: ${theme.colors.primary}
+    width:8.82rem;
+    
   `
+  // cancel: ({ theme }) => `
+  // // background: ${}
+  // `
 };
 
 export const Button = styled.button`
+  text-align: center;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -20,17 +22,20 @@ export const Button = styled.button`
   height: 3rem;
   margin-top: 3rem;
   font-family: ${PrimaryFont};
+  font-weight: 500;
   cursor: pointer;
   border: none;
   max-width: none;
   position: relative;
   background: transparent;
-  text-align: center;
   text-decoration: none;
   overflow: visible;
   color: #4c4c4c;
   z-index: 50;
   max-width: 100%;
+  &:hover {
+    color: ${Colors.white};
+  }
 
   &::before {
     content: "";
