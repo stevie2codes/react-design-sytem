@@ -13,7 +13,11 @@ const Home = () => {
           <span>Show Modal</span>
         </Button>
         <Modal isToggle={isToggle} setIsToggle={setIsToggle}>
-          <Cards title="SignIn" graphic={signin} />
+          <Cards title="SignIn" graphic={signin}>
+            <Cards.Button>
+              <span>Sign in</span>
+            </Cards.Button>
+          </Cards>
         </Modal>
       </main>
     </div>
