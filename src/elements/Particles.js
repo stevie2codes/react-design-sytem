@@ -12,6 +12,9 @@ const ParticlesElement = () => {
             },
             size: {
               value: 5
+            },
+            color: {
+              value: "#430099"
             }
           },
           interactivity: {
