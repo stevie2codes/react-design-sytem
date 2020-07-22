@@ -1,10 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "polished";
+import { PrimaryFont } from "./utilities/Type";
 
 import { Colors } from "./utilities/Colors";
 
 const GlobalStyle = createGlobalStyle`
 ${normalize()};
+:root{
+  font-size:18px;
+}
 html{
     box-sizing: border-box;
 }
@@ -14,11 +18,7 @@ html{
 body {
   margin: 0;
   padding:85px 0 0 ;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: ${PrimaryFont};
   background:${props => props.theme.colors.primary};
 }
 
