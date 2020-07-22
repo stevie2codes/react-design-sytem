@@ -19,11 +19,8 @@ function App() {
           isDarkMode ? lightTheme.colors.primary : darkTheme.colors.primary
         }
         style={{
-          position: "fixed",
-          top: 0,
-          right: 0,
           backgroundSize: "cover",
-          width: "100vw",
+          position: "fixed",
           height: "100vh"
         }}
       />

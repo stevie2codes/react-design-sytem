@@ -58,7 +58,7 @@ const MenuNav = styled(motion.nav)`
   ${fixed({ x: 0, y: 0 })};
   width: 300px;
   height: 100vh;
-  background-color: ${Colors.purple};
+  background: ${Colors.purple};
   padding: 0px 50px;
   z-index: 100;
   ${Elevation[2]};

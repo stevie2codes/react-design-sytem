@@ -40,7 +40,7 @@ const CloseIcon = ({ onClick, strokeColor }) => {
 };
 
 const Close = styled.svg`
-  ${fixed({ x: "5px", y: "20px" })}
+  /* ${fixed({ x: "500px", y: "20px" })} */
   z-index:50;
   cursor: pointer;
 `;
