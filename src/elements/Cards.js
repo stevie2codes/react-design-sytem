@@ -3,17 +3,15 @@ import { Button } from "./Buttons";
 import { Elevation, PrimaryFont, Colors } from "../utilities";
 import React from "react";
 
-const Cards = ({ title, graphic, children }) => {
-  return (
-    <CardContainer>
-      <Card>
-        <CardTitle className="cardTitle">{title}</CardTitle>
-        <CardGraphic src={graphic} alt="Card Graphic" />
-        {children}
-      </Card>
-    </CardContainer>
-  );
-};
+const Cards = ({ title, graphic, children }) => (
+  <CardContainer>
+    <Card>
+      <CardTitle className="cardTitle">{title}</CardTitle>
+      <CardGraphic src={graphic} alt="Card Graphic" />
+      {children}
+    </Card>
+  </CardContainer>
+);
 
 const CardContainer = styled.div`
   display: inline-flex;
@@ -22,7 +20,7 @@ const CardContainer = styled.div`
   margin: 20px;
 `;
 
-export const Card = styled.div`
+const Card = styled.div`
   border-radius: 6px;
   ${Elevation[1]};
   padding: 20px;

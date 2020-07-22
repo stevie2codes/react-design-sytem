@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import CloseIcon from "./CloseIcon";
 
-import { Colors } from "../utilities";
+import { Colors, Elevation } from "../utilities";
 
 const Modal = ({ isToggle, setIsToggle, children }) => {
   return (
@@ -33,12 +33,14 @@ const Modal = ({ isToggle, setIsToggle, children }) => {
 };
 
 const ModalDiv = styled(motion.div)`
-  width: 400px;
+  width: 380px;
   margin: auto;
   position: fixed;
   top: 200px;
   left: 50%;
   transform: translate(-50%);
+  z-index: 999;
+  padding: 20;
 `;
 
 export default Modal;

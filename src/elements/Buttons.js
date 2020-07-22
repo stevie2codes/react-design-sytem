@@ -1,19 +1,16 @@
 import styled from "styled-components";
 import { applyStyleModifiers } from "styled-components-modifiers";
 import { Colors, Elevation, PrimaryFont } from "../utilities";
+import { motion } from "framer-motion";
 
 const BUTTON_MODIFIERS = {
   small: () => `
     font-size: 0.8rem;
     width:8.82rem;
-    
   `
-  // cancel: ({ theme }) => `
-  // // background: ${}
-  // `
 };
 
-export const Button = styled.button`
+export const Button = styled(motion.button)`
   text-align: center;
   display: inline-flex;
   justify-content: center;
@@ -30,7 +27,7 @@ export const Button = styled.button`
   background: transparent;
   text-decoration: none;
   overflow: visible;
-  color: #4c4c4c;
+  color: ${props => props.theme.colors.buttonText};
   z-index: 50;
   max-width: 100%;
   &:hover {
@@ -47,7 +44,7 @@ export const Button = styled.button`
     z-index: -1;
     left: 0;
     border: 1.5px solid #430099;
-    background: #fff;
+    background: ${props => props.theme.colors.button};
     transform: translateZ(0);
     border-bottom: none;
     transition: background 0.2s ease;
@@ -64,7 +61,7 @@ export const Button = styled.button`
     z-index: -1;
     left: 0;
     border: 1.5px solid #430099;
-    background: #fff;
+    background: ${props => props.theme.colors.button};
     border-top: none;
     transform: translateZ(0);
     transition: background 0.2s ease;
@@ -75,15 +72,13 @@ export const Button = styled.button`
     ${Elevation[2]};
     border: none;
     background: ${Colors.purple};
-    color: ${Colors.white};
-    transition: 0.2s ease-in all;
+    transition: 0.2s ease-in-out all;
   }
   &:hover:after {
     ${Elevation[2]};
     border: none;
     background: ${Colors.purple};
-    color: ${Colors.white};
-    transition: 0.2s ease-in all;
+    transition: 0.2s ease-in-out all;
   }
   &:focus {
     outline: none;
@@ -92,7 +87,3 @@ export const Button = styled.button`
 
   ${applyStyleModifiers(BUTTON_MODIFIERS)};
 `;
-
-// export const CancelButton = styled(Button)`
-//   background: tomato;
-// `;

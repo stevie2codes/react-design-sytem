@@ -60,7 +60,7 @@ const MenuNav = styled(motion.nav)`
   height: 100vh;
   background-color: ${Colors.purple};
   padding: 0px 50px;
-  z-index: 10;
+  z-index: 100;
   ${Elevation[2]};
   ul {
     position: absolute;

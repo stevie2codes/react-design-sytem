@@ -6,39 +6,37 @@ import MenuIcon from "./elements/MenuIcon";
 import { Nav } from "./components/Nav";
 
 import Switch from "./elements/Switch";
-import { Colors, PrimaryFont } from "./utilities";
-
-const theme = {
-  colors: {
-    primary: "#151515",
-    cardColor: ` #212121`,
-    secondary: "#DBDE61",
-    shadow: `0 4px 8px 1px rgba(0,0,0,0.2), 0 6px 16px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2),
-    0 -6px 4px #212121, inset 0 0 3px 0 #430099`
-  }
-};
-const theme2 = {
-  colors: {
-    primary: `${Colors.white}`,
-    secondary: "#DBDE61",
-    cardColor: `${Colors.white}`,
-    fontFamily: ` ${PrimaryFont}`,
-    shadow: `  0 4px 3px 1px #fcfcfc, 0 6px 8px #d6d7d9, 0 -4px 4px #cecfd1,
-    0 -6px 4px #fefefe, inset 0 0 3px 0 #cecfd1`
-  }
-};
+import { darkTheme, lightTheme } from "./utilities";
+import PageTurner from "./images/PageTurner";
 
 function App() {
   const [isNav, setIsNav] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   return (
-    <ThemeProvider theme={isDarkMode ? theme2 : theme}>
+    <ThemeProvider theme={isDarkMode ? lightTheme : darkTheme}>
+      <PageTurner
+        fillColor={
+          isDarkMode ? lightTheme.colors.primary : darkTheme.colors.primary
+        }
+        style={{
+          position: "fixed",
+          top: 0,
+          right: 0,
+          backgroundSize: "cover",
+          width: "100vw",
+          height: "100vh"
+        }}
+      />
       <div>
         <Header />
-        <MenuIcon onClick={() => setIsNav(true)} />
+        <MenuIcon
+          onClick={() => setIsNav(true)}
+          strokeColor={
+            isDarkMode ? darkTheme.colors.primary : lightTheme.colors.primary
+          }
+        />
         <Nav isNav={isNav} setIsNav={setIsNav} />
         <GlobalStyle />
-
         <Switch isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       </div>
     </ThemeProvider>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../logo.svg";
-import { Colors, Elevation, fixed } from "../utilities";
+import { fixed } from "../utilities";
 
 const Header = ({ className, theme }) => {
   return (
@@ -12,7 +12,7 @@ const Header = ({ className, theme }) => {
 };
 
 const StyledHeader = styled(Header)`
-  background-color: ${Colors.purple};
+  background-color: transparent;
   padding: 30px 5%;
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,6 @@ const StyledHeader = styled(Header)`
   align-items: center;
   ${fixed()};
   width: 100%;
-  ${Elevation[2]};
   .logo {
     width: 60px;
   }
