@@ -9,7 +9,6 @@ import CloseIcon from "../elements/CloseIcon";
 
 import Home from "../pages/Home";
 import About from "../pages/About";
-import ParticlesElement from "../elements/Particles";
 
 export const Nav = ({ isNav, setIsNav }) => {
   return (
@@ -22,8 +21,9 @@ export const Nav = ({ isNav, setIsNav }) => {
             animate={isNav ? "open" : "closed"}
             transition={{ damping: 300 }}
           >
-            <ParticlesElement />
-            <CloseIcon onClick={() => setIsNav(false)} strokeColor={"#fff"} />
+            <ModalClosebtn>
+              <CloseIcon onClick={() => setIsNav(false)} strokeColor={"#fff"} />
+            </ModalClosebtn>
             <motion.ul variants={ulVariants}>
               <motion.li variants={liVariants}>
                 <Link to="/" onClick={() => setIsNav(false)}>
@@ -59,22 +59,26 @@ const MenuNav = styled(motion.nav)`
   width: 300px;
   height: 100vh;
   background: ${Colors.purple};
+
   padding: 0px 50px;
   z-index: 100;
   ${Elevation[2]};
+
   ul {
-    position: absolute;
+    position: relative;
     list-style: none;
-    padding: 0;
+    padding: 20px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    top: 20%;
   }
   li {
     padding: 0;
     margin: 50px auto 0px auto;
     font-size: 1.5rem;
     ${PrimaryFont};
+    align-items: center;
   }
   a {
     color: ${Colors.white};
@@ -100,6 +104,18 @@ const MenuNav = styled(motion.nav)`
       opacity: 1;
     }
   }
+`;
+export const ModalClosebtn = styled.button`
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: transparent;
+  border: none;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  z-index: 2000;
 `;
 
 const variants = {

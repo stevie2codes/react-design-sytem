@@ -29,7 +29,14 @@ export const Modal = ({ isToggle, setIsToggle }) => {
           >
             Sign Up
           </SignUpHeader>
-          <SignUpText>Sign up today to get access!</SignUpText>
+          <SignUpText
+            variants={text2Variants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.3 }}
+          >
+            Sign up today to get access!
+          </SignUpText>
           <Button>Sign Up!</Button>
           <ModalClosebtn aria-label="close modal">
             <CloseIcon
@@ -79,11 +86,17 @@ const ModalClosebtn = styled.button`
   width: 28px;
   height: 28px;
   padding: 0;
+  z-index: 2000;
 `;
 
 export default Modal;
 
 const textVariants = {
   hidden: { opacity: 0, x: "-600px" },
+  visible: { opacity: 1, x: 0 }
+};
+
+const text2Variants = {
+  hidden: { opacity: 0, x: "600px" },
   visible: { opacity: 1, x: 0 }
 };

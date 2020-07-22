@@ -12,8 +12,8 @@ const MenuIcon = ({ onClick, strokeColor }) => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <line y1="1" x2="30" y2="1" stroke={strokeColor} strokeWidth="2" />
-        <line y1="10" x2="30" y2="10" stroke={strokeColor} strokeWidth="2" />
-        <line y1="20" x2="30" y2="20" stroke={strokeColor} strokeWidth="2" />
+        <line y1="10" x2="35" y2="10" stroke={strokeColor} strokeWidth="2" />
+        <line y1="20" x2="40" y2="20" stroke={strokeColor} strokeWidth="2" />
       </svg>
     </BurgerMenu>
   );
