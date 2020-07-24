@@ -3,7 +3,7 @@ import signup from "../images/signup.svg";
 import signin from "../images/signin.svg";
 import Cards from "../elements/Cards";
 import Modal from "../elements/Modal";
-import { Button } from "../elements/Buttons";
+import { PrimaryButton } from "../components/Buttons";
 
 import { TextInput } from "../elements/TextInput";
 
@@ -14,7 +14,9 @@ const About = ({ title, graphic }) => {
       <h1>Cards</h1>
       <main>
         <Modal isToggle={isToggle} setIsToggle={setIsToggle}></Modal>
-        <Button onClick={() => setIsToggle(true)}>ShowModal</Button>
+        <PrimaryButton onClick={() => setIsToggle(true)}>
+          ShowModal
+        </PrimaryButton>
         <Cards title="SignUp" graphic={signin} buttonText={"Sign Up"}>
           <Cards.Button>SignUp</Cards.Button>
         </Cards>

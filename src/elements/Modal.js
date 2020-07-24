@@ -4,16 +4,27 @@ import styled from "styled-components";
 import CloseIcon from "./CloseIcon";
 import signin from "../images/signin.svg";
 import { Colors, Elevation, typeScale } from "../utilities";
-import { Button } from "./Buttons";
+import { PrimaryButton } from "../components/Buttons";
 
 export const Modal = ({ isToggle, setIsToggle }) => {
   return (
     <AnimatePresence>
       {isToggle && (
         <ModalWrapper
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          initial={{ opacity: 0, y: "-100%" }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delayChildren: 0.8
+            }
+          }}
+          exit={{ opacity: 0, x: "-100%" }}
+          transition={{
+            type: "tween",
+            stiffness: 600,
+            default: { duration: 0.2 }
+          }}
         >
           <img
             src={signin}
@@ -37,7 +48,7 @@ export const Modal = ({ isToggle, setIsToggle }) => {
           >
             Sign up today to get access!
           </SignUpText>
-          <Button>Sign Up!</Button>
+          <PrimaryButton>Sign Up!</PrimaryButton>
           <ModalClosebtn aria-label="close modal">
             <CloseIcon
               onClick={() => setIsToggle(false)}

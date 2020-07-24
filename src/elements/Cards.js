@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button } from "./Buttons";
+import { PrimaryButton } from "../components/Buttons";
 import { Elevation, PrimaryFont, Colors } from "../utilities";
 import React from "react";
 
@@ -32,7 +32,7 @@ const Card = styled.div`
   z-index: 1;
   background-color: ${props => props.theme.colors.cardColor};
 `;
-const CardButton = styled(Button)`
+const CardButton = styled(PrimaryButton)`
   position: absolute;
   bottom: 60px;
   right: 50%;

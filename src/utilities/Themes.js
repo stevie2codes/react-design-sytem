@@ -7,8 +7,8 @@ export const darkTheme = {
     button: `${Colors.purple}`,
     buttonText: `${Colors.white}`,
     secondary: "#DBDE61",
-    shadow: `0 4px 8px 1px rgba(0,0,0,0.2), 0 6px 16px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2),
-      0 -6px 4px #212121, inset 0 0 3px 0 #430099`
+    shadow: ` 6px 6px 16px #141414, 
+    -6px -6px 16px #2e2e2e`
   }
 };
 export const lightTheme = {

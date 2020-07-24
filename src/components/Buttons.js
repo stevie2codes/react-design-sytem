@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { applyStyleModifiers } from "styled-components-modifiers";
-import { Colors, Elevation, PrimaryFont } from "../utilities";
+import { Colors, Elevation, PrimaryFont, typeScale } from "../utilities";
 import { motion } from "framer-motion";
 
 const BUTTON_MODIFIERS = {
@@ -10,7 +10,7 @@ const BUTTON_MODIFIERS = {
   `
 };
 
-export const Button = styled(motion.button)`
+export const PrimaryButton = styled(motion.button)`
   text-align: center;
   display: inline-flex;
   justify-content: center;
@@ -18,6 +18,7 @@ export const Button = styled(motion.button)`
   width: 17.625rem;
   height: 3rem;
   margin-top: 3rem;
+  font-size: ${typeScale.paragraph};
   font-family: ${PrimaryFont};
   font-weight: 500;
   cursor: pointer;

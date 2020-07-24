@@ -25,12 +25,12 @@ const ModeSwitch = styled(motion.div)`
   height: 50px;
   background-color: ${Colors.white};
   box-shadow: ${props => props.theme.colors.shadow};
-  border: 1px solid #8f9092;
+  /* border: 1px solid #8f9092; */
   border-radius: 25px;
   display: flex;
-  ${fixed({ x: "10px", y: "120px" })};
+  ${fixed({ x: "15px", y: "90%" })};
   align-items: center;
-  padding: 25px 3px;
+  padding: 25px 5px;
 `;
 
 const Indicator = styled(motion.div)`
