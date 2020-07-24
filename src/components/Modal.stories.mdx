@@ -1,0 +1,24 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import {Modal} from "./Modal.js";
+import { action } from "@storybook/addon-actions";
+import { withKnobs, boolean } from "@storybook/addon-knobs";
+
+<Meta title="Design System|Modal" component={Modal} />
+
+# Modal
+
+A Modal are dialogs which overlay content to convey.  
+
+## Usage
+
+Use modals to call the user to action or complete a task. 
+
+## Sign up Modal 
+
+The Signup Modal is used to prompt the user to create an account. 
+
+<Preview withToolbar>
+  <Story name="signUp">
+    <Modal  isToggle={boolean("Show Modal",true)}></Modal>
+  </Story>
+</Preview>

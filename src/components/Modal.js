@@ -1,9 +1,9 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
-import CloseIcon from "./CloseIcon";
+import CloseIcon from "../elements/CloseIcon";
 import signin from "../images/signin.svg";
-import { Colors, Elevation, typeScale } from "../utilities";
+import { Colors, Elevation, typeScale, PrimaryFont } from "../utilities";
 import { PrimaryButton } from "../components/Buttons";
 
 export const Modal = ({ isToggle, setIsToggle }) => {
@@ -77,10 +77,13 @@ const ModalWrapper = styled(motion.div)`
 `;
 
 const SignUpHeader = styled(motion.h3)`
+  font-family: ${PrimaryFont};
   font-size: ${typeScale.header3};
   color: ${props => props.theme.colors.buttonText};
 `;
 const SignUpText = styled(motion.p)`
+  font-family: ${PrimaryFont};
+  font-weight: 100;
   font-size: ${typeScale.paragraph};
   max-width: 70%;
   text-align: center;

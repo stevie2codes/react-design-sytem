@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import signup from "../images/signup.svg";
 import signin from "../images/signin.svg";
 import Cards from "../elements/Cards";
-import Modal from "../elements/Modal";
+import Modal from "../components/Modal";
 import { PrimaryButton } from "../components/Buttons";
 
 import { TextInput } from "../elements/TextInput";

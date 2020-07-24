@@ -2,8 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import { normalize } from "polished";
 import { PrimaryFont } from "./utilities/Type";
 
-import { Colors } from "./utilities/Colors";
-
 const GlobalStyle = createGlobalStyle`
 ${normalize()};
 :root{
@@ -26,18 +24,6 @@ main{
     width: 90%;
     margin: 50px auto;
 }
-
-span{
-  color:${Colors.darkGrey};
-  width:100%;
-  height:50%;
-  position:absolute;
-  font-size:1.2rem;
-  &:hover{
-    color:${Colors.white};
-      }
-}
-
 `;
 
 export default GlobalStyle;
