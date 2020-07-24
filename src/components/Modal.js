@@ -48,7 +48,7 @@ export const Modal = ({ isToggle, setIsToggle }) => {
           >
             Sign up today to get access!
           </SignUpText>
-          <PrimaryButton>Sign Up!</PrimaryButton>
+          <PrimaryButton aria-label="sign up button">Sign Up!</PrimaryButton>
           <ModalClosebtn aria-label="close modal">
             <CloseIcon
               onClick={() => setIsToggle(false)}
