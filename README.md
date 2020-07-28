@@ -7,3 +7,4 @@ An ever growing system of components
 - Styled Components
 - Framer Motion
 - Story Book
+- Netlify
