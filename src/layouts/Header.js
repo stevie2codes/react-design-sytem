@@ -1,14 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../logo.svg";
+
 import { fixed } from "../utilities";
 
 const Header = ({ className, theme }) => {
-  return (
-    <header className={className}>
-      <img src={logo} alt="logo" className="logo" />
-    </header>
-  );
+  return <header className={className}></header>;
 };
 
 const StyledHeader = styled(Header)`
